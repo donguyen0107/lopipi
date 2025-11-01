@@ -627,54 +627,322 @@
         }
         /* Responsive */
         
+        /* =============================
+           MOBILE OPTIMIZATION - ABOUTUS
+           ============================= */
+
+        /* Tablet */
         @media (max-width: 992px) {
+            /* Hero section */
+            .hero-section {
+                background-attachment: scroll;
+                padding: 140px 20px 80px;
+                min-height: 600px;
+            }
+
+            .aurora-text {
+                font-size: clamp(2.5rem, 7vw, 4rem);
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+                letter-spacing: 2px;
+            }
+
+            /* About sections */
+            .about-section {
+                padding: 70px 5%;
+            }
+
             .about-container {
                 flex-direction: column;
                 text-align: center;
+                gap: 40px;
             }
+
             .about-left {
                 max-width: 100%;
             }
+
+            .about-left h2 {
+                font-size: 2.2rem;
+            }
+
+            .about-left p {
+                font-size: 1.05rem;
+            }
+
+            /* Swiper carousel */
             .tranding-slider {
                 height: 400px;
             }
+
             .tranding-slide {
                 width: 320px;
                 height: 280px;
             }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                width: 55px !important;
+                height: 55px !important;
+            }
         }
-        
+
+        /* Mobile */
         @media (max-width: 768px) {
+            /* Navbar mobile */
+            .site-navbar .nav-link {
+                padding: 10px 16px !important;
+                font-size: 0.95rem;
+            }
+
+            .dropdown-menu {
+                background: rgba(10, 10, 10, 0.98);
+                border: none;
+            }
+
+            .dropdown-menu a {
+                padding: 12px 20px;
+                font-size: 0.95rem;
+            }
+
+            /* Hero mobile */
+            .hero-section {
+                padding: 120px 15px 60px;
+                min-height: 550px;
+            }
+
             .aurora-text {
                 font-size: clamp(2rem, 8vw, 3.5rem);
                 padding: 0 10px;
+                line-height: 1.2;
             }
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
-                align-items: center;
+
+            .hero-subtitle {
+                font-size: 0.85rem;
+                letter-spacing: 1.5px;
             }
-            .footer-about p {
-                max-width: 100%;
+
+            /* About sections */
+            .about-section {
+                padding: 60px 5%;
             }
-            .footer-bottom {
-                flex-direction: column;
-                gap: 15px;
+
+            .about-container {
+                gap: 35px;
             }
+
+            .about-left h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .about-left p {
+                font-size: 1rem;
+                line-height: 1.7;
+                margin-bottom: 18px;
+            }
+
+            /* Swiper carousel mobile */
+            .tranding-slider {
+                height: 350px;
+                padding: 30px 0;
+            }
+
             .tranding-slide {
                 width: 280px;
                 height: 250px;
             }
+
             .swiper-button-prev,
             .swiper-button-next {
                 width: 50px !important;
                 height: 50px !important;
+                font-size: 18px;
+            }
+
+            .swiper-button-prev::after,
+            .swiper-button-next::after {
+                font-size: 18px !important;
+            }
+
+            /* Footer mobile */
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .footer-about {
+                max-width: 100%;
+            }
+
+            .footer-about p {
+                max-width: 100%;
+            }
+
+            .footer-links {
+                width: 100%;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
             }
         }
-        
+
+        /* Mobile nhỏ */
         @media (max-width: 576px) {
+            /* Navbar compact */
+            .site-name {
+                font-size: 1.2rem;
+            }
+
+            .site-navbar .container {
+                padding: 0 10px;
+            }
+
+            /* Hero compact */
+            .hero-section {
+                padding: 100px 10px 50px;
+                min-height: 500px;
+            }
+
             .aurora-text {
-                font-size: clamp(1.5rem, 10vw, 2.5rem);
+                font-size: clamp(1.8rem, 10vw, 2.5rem);
+                line-height: 1.15;
+            }
+
+            .hero-subtitle {
+                font-size: 0.75rem;
+                letter-spacing: 1px;
+            }
+
+            /* About sections compact */
+            .about-section {
+                padding: 50px 3%;
+            }
+
+            .about-container {
+                gap: 30px;
+            }
+
+            .about-left h2 {
+                font-size: 1.75rem;
+                margin-bottom: 18px;
+            }
+
+            .about-left p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin-bottom: 16px;
+            }
+
+            /* Swiper carousel compact */
+            .tranding-slider {
+                height: 320px;
+                padding: 25px 0;
+            }
+
+            .tranding-slide {
+                width: 240px;
+                height: 220px;
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                width: 45px !important;
+                height: 45px !important;
+                font-size: 16px;
+            }
+
+            .swiper-button-prev::after,
+            .swiper-button-next::after {
+                font-size: 16px !important;
+            }
+
+            /* Footer compact */
+            .site-footer {
+                padding: 50px 3%;
+            }
+
+            .footer-about p {
+                font-size: 0.9rem;
+            }
+
+            .footer-social a {
+                font-size: 18px;
+                margin-right: 12px;
+            }
+
+            .footer-links h4 {
+                font-size: 1.1rem;
+            }
+
+            .footer-links a {
+                font-size: 0.9rem;
+            }
+
+            .footer-bottom p {
+                font-size: 0.85rem;
+            }
+
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Touch optimization */
+        @media (hover: none) and (pointer: coarse) {
+            /* Nav links touch-friendly */
+            .site-navbar .nav-link {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+
+            /* Swiper buttons touch-friendly */
+            .swiper-button-prev,
+            .swiper-button-next {
+                min-width: 50px !important;
+                min-height: 50px !important;
+            }
+
+            /* Disable hover animations on touch */
+            .tranding-slide:hover .tranding-slide-img {
+                transform: none;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(201, 169, 97, 0.2);
+            }
+
+            .tranding-slide:hover .tranding-slide-img img {
+                transform: none;
+                filter: none;
+            }
+
+            /* Active state for touch */
+            .tranding-slide:active {
+                transform: scale(0.98);
+            }
+        }
+
+        /* Landscape mobile optimization */
+        @media (max-width: 992px) and (orientation: landscape) {
+            .hero-section {
+                padding: 100px 20px 60px;
+                min-height: 500px;
+            }
+
+            .about-section {
+                padding: 50px 5%;
+            }
+
+            .tranding-slider {
+                height: 300px;
             }
         }
         /* Smooth transitions for all elements */

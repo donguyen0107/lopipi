@@ -1379,25 +1379,539 @@ a:not(.btn):hover {
     }
 }
     
+/* =============================
+   MOBILE OPTIMIZATION
+   ============================= */
+
+/* Tablet và màn hình nhỏ hơn */
 @media (max-width: 992px) {
+    /* Navbar mobile */
+    .site-navbar {
+        padding: 10px 0;
+    }
+
+    .site-name {
+        font-size: 1.4rem;
+    }
+
+    .navbar-toggler {
+        border-color: rgba(201, 169, 97, 0.5);
+        padding: 8px 12px;
+    }
+
+    .navbar-toggler-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* Hero section */
     .hero-section {
         background-attachment: scroll;
         background-position: center center;
         background-size: cover;
-        padding-top: 120px;
-        padding-bottom: 80px;
+        padding: 140px 20px 80px;
         min-height: 600px;
+        height: auto;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    /* Carousel mobile */
+    .infinite-carousel {
+        padding: 30px 0;
+    }
+
+    .carousel-item-wrapper {
+        width: 250px;
+        height: 250px;
+    }
+
+    .carousel-overlay h5 {
+        font-size: 1rem;
+    }
+
+    .carousel-overlay p {
+        font-size: 0.85rem;
+    }
+
+    /* Cards section */
+    .timhieu {
+        padding: 60px 5%;
+        background-attachment: scroll;
+    }
+
+    .hover-card {
+        margin-bottom: 20px;
+    }
+
+    /* Comment slider */
+    .slider {
+        height: 400px;
+    }
+
+    .item {
+        width: 340px;
+        height: 380px;
+        padding: 25px;
+        left: calc(50% - 170px);
+    }
+
+    .item h3 {
+        font-size: 1.4rem;
+    }
+
+    .item p {
+        font-size: 0.9rem;
+    }
+
+    #next, #prev {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
+    }
+
+    #prev {
+        left: 30px;
+    }
+
+    #next {
+        right: 30px;
+    }
+
+    /* Footer */
+    .site-footer {
+        padding: 60px 5%;
     }
 }
 
+/* Mobile nhỏ */
+@media (max-width: 768px) {
+    /* Navbar */
+    .site-name {
+        font-size: 1.3rem;
+    }
+
+    .site-navbar .nav-link {
+        padding: 10px 16px !important;
+        font-size: 0.95rem;
+    }
+
+    .dropdown-menu {
+        background: rgba(10, 10, 10, 0.98);
+        border: none;
+        margin-top: 5px;
+    }
+
+    .dropdown-menu a {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    /* Hero */
+    .hero-section {
+        padding: 120px 15px 60px;
+        min-height: 550px;
+    }
+
+    .aurora-text {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+        padding: 0 10px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.85rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 15px;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        padding: 0 10px;
+        margin-top: 15px;
+    }
+
+    /* Buttons mobile-friendly (lớn hơn để dễ nhấn) */
+    .hero-buttons {
+        gap: 15px;
+        margin-top: 25px;
+    }
+
+    .animated-btn, .btn-outline-premium {
+        padding: 14px 30px;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        min-width: 140px;
+    }
+
+    /* Section headers */
+    .section-header {
+        padding: 0 15px;
+        margin-bottom: 30px;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.85rem;
+        letter-spacing: 1.5px;
+    }
+
+    .section-description {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    /* Carousel */
+    .carousel-item-wrapper {
+        width: 220px;
+        height: 220px;
+    }
+
+    .carousel-track {
+        gap: 20px;
+    }
+
+    /* About section */
+    .about-section {
+        padding: 60px 5%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-left h2 {
+        font-size: 2rem;
+    }
+
+    .about-left p {
+        font-size: 1rem;
+    }
+
+    .about-buttons {
+        justify-content: center;
+    }
+
+    .about-video-container video {
+        max-width: 100%;
+    }
+
+    /* Comment slider */
+    .comment-section {
+        padding: 60px 15px;
+        background-attachment: scroll;
+    }
+
+    .slider {
+        height: 450px;
+    }
+
+    .item {
+        width: 300px;
+        height: 400px;
+        padding: 20px;
+        left: calc(50% - 150px);
+    }
+
+    .item h3 {
+        font-size: 1.3rem;
+    }
+
+    .item p {
+        font-size: 0.88rem;
+        line-height: 1.5;
+    }
+
+    #next, #prev {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+
+    #prev {
+        left: 15px;
+    }
+
+    #next {
+        right: 15px;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footer-about {
+        max-width: 100%;
+    }
+
+    .footer-about p {
+        max-width: 100%;
+    }
+
+    .footer-links {
+        width: 100%;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* Mobile rất nhỏ */
 @media (max-width: 576px) {
+    /* Navbar compact */
+    .site-name {
+        font-size: 1.2rem;
+    }
+
+    .site-navbar .container {
+        padding: 0 10px;
+    }
+
+    /* Hero compact */
     .hero-section {
         background-attachment: scroll;
-        background-position: center center;
-        background-size: cover;
         height: auto;
         min-height: 500px;
-        padding-top: 100px;
-        padding-bottom: 60px;
+        padding: 100px 10px 50px;
+    }
+
+    .aurora-text {
+        font-size: clamp(1.8rem, 10vw, 2.5rem);
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Buttons compact nhưng vẫn touch-friendly */
+    .animated-btn, .btn-outline-premium {
+        padding: 12px 24px;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        min-width: 130px;
+    }
+
+    /* Section headers compact */
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .section-description {
+        font-size: 0.9rem;
+    }
+
+    /* Carousel compact */
+    .infinite-carousel {
+        padding: 25px 0;
+        mask-image: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+    }
+
+    .carousel-item-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+
+    .carousel-track {
+        gap: 15px;
+        padding-left: 15px;
+    }
+
+    .carousel-overlay {
+        padding: 15px;
+    }
+
+    .carousel-overlay h5 {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+
+    .carousel-overlay p {
+        font-size: 0.75rem;
+    }
+
+    /* Cards */
+    .timhieu {
+        padding: 50px 3%;
+    }
+
+    .hover-card .card-body {
+        padding: 15px;
+    }
+
+    .hover-card .card-title {
+        font-size: 1.1rem;
+    }
+
+    .hover-card .card-text {
+        font-size: 0.9rem;
+    }
+
+    .btn-outline-premium.btn-sm {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+
+    /* About section */
+    .about-section {
+        padding: 50px 3%;
+    }
+
+    .about-left h2 {
+        font-size: 1.75rem;
+    }
+
+    .about-left p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .about-buttons .btn {
+        padding: 12px 24px;
+        font-size: 0.85rem;
+    }
+
+    /* Comment slider mobile */
+    .comment-section {
+        padding: 50px 10px;
+    }
+
+    .slider {
+        height: 480px;
+    }
+
+    .item {
+        width: 280px;
+        height: 420px;
+        padding: 18px;
+        left: calc(50% - 140px);
+    }
+
+    .item h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .item p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        -webkit-line-clamp: 7;
+    }
+
+    .testimonial-header i {
+        font-size: 1.2rem;
+    }
+
+    .testimonial-author strong {
+        font-size: 0.95rem;
+    }
+
+    .testimonial-author p {
+        font-size: 0.85rem;
+    }
+
+    #next, #prev {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+
+    #prev {
+        left: 10px;
+    }
+
+    #next {
+        right: 10px;
+    }
+
+    /* Footer compact */
+    .site-footer {
+        padding: 50px 3%;
+    }
+
+    .footer-about p {
+        font-size: 0.9rem;
+    }
+
+    .footer-social a {
+        font-size: 18px;
+        margin-right: 12px;
+    }
+
+    .footer-links h4 {
+        font-size: 1.1rem;
+    }
+
+    .footer-links a {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    .footer-bottom p {
+        font-size: 0.85rem;
+    }
+
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+/* Touch optimization cho tất cả mobile */
+@media (hover: none) and (pointer: coarse) {
+    /* Tăng kích thước tất cả các button để dễ tap */
+    .btn, button, a.btn {
+        min-height: 44px;
+        padding: 12px 24px;
+    }
+
+    /* Tăng kích thước nav links */
+    .site-navbar .nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Tắt hover effects, thay bằng active */
+    .carousel-item-wrapper:hover,
+    .hover-card:hover,
+    .item:hover {
+        transform: none;
+    }
+
+    .carousel-item-wrapper:active {
+        transform: scale(0.98);
+    }
+
+    /* Tối ưu slider buttons cho touch */
+    #next, #prev {
+        min-width: 50px;
+        min-height: 50px;
     }
 }

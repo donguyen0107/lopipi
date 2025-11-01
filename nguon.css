@@ -45,3 +45,183 @@
   font-size: 0.95rem;
 }
 
+/* =============================
+   MOBILE OPTIMIZATION - NGUON
+   ============================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .refs-section {
+    padding: 60px 5%;
+  }
+
+  .refs-box {
+    padding: 20px;
+    margin: 25px auto 0;
+  }
+
+  .refs-box h2 {
+    font-size: 1.2rem;
+  }
+
+  .refs-list {
+    gap: 10px;
+  }
+
+  .refs-list li {
+    padding: 10px;
+  }
+
+  .refs-list strong {
+    font-size: 0.95rem;
+  }
+
+  .refs-list a {
+    font-size: 0.9rem;
+  }
+
+  .refs-note {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .refs-section {
+    padding: 50px 4%;
+  }
+
+  .refs-box {
+    padding: 18px;
+    margin: 20px auto 0;
+    border-radius: 10px;
+  }
+
+  .refs-box h2 {
+    font-size: 1.15rem;
+    margin-bottom: 15px;
+  }
+
+  .refs-list {
+    gap: 10px;
+  }
+
+  .refs-list li {
+    padding: 10px 12px;
+    border-left-width: 3px;
+    border-radius: 6px;
+  }
+
+  .refs-list strong {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+
+  .refs-list a {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .refs-note {
+    font-size: 0.85rem;
+    margin-top: 12px;
+  }
+
+  /* Hero section cho nguon page */
+  .hero-section {
+    padding: 120px 15px 60px;
+    min-height: 500px;
+  }
+
+  .hero-inner {
+    padding: 0 10px;
+  }
+
+  .hero-inner h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 576px) {
+  .refs-section {
+    padding: 40px 3%;
+  }
+
+  .refs-box {
+    padding: 15px;
+    margin: 18px auto 0;
+    border-radius: 8px;
+  }
+
+  .refs-box h2 {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+  }
+
+  .refs-list {
+    gap: 8px;
+  }
+
+  .refs-list li {
+    padding: 8px 10px;
+    border-left-width: 3px;
+  }
+
+  .refs-list strong {
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+  }
+
+  .refs-list a {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+
+  .refs-note {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  /* Hero section compact */
+  .hero-section {
+    padding: 100px 10px 50px;
+    min-height: 450px;
+  }
+
+  .hero-inner h1 {
+    font-size: clamp(1.8rem, 10vw, 2.5rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+}
+
+/* Touch optimization */
+@media (hover: none) and (pointer: coarse) {
+  /* Links touch-friendly */
+  .refs-list a {
+    display: inline-block;
+    padding: 4px 0;
+    min-height: 24px;
+  }
+
+  /* Disable hover effects */
+  .refs-list li:hover {
+    transform: none;
+  }
+
+  .refs-list li:active {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
