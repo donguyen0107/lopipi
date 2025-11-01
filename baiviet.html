@@ -184,42 +184,6 @@
     const sidebar = document.getElementById('sidebar');
     const sidebarLinks = document.querySelectorAll('.sidebar-link');
     const footer = document.querySelector('.site-footer');
-    const navbarCollapse = document.getElementById('mainNav');
-
-    // Xử lý ẩn/hiện nút toggle sidebar khi navbar mở/đóng trên mobile
-    if (navbarCollapse) {
-      navbarCollapse.addEventListener('show.bs.collapse', function () {
-        // Khi navbar mở, ẩn nút toggle sidebar với animation
-        if (sidebarToggleBtn) {
-          sidebarToggleBtn.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-          sidebarToggleBtn.style.opacity = '0';
-          sidebarToggleBtn.style.transform = 'scale(0.8)';
-          sidebarToggleBtn.style.pointerEvents = 'none';
-        }
-      });
-
-      navbarCollapse.addEventListener('hide.bs.collapse', function () {
-        // Khi navbar đóng, hiện lại nút toggle sidebar với animation
-        if (sidebarToggleBtn) {
-          sidebarToggleBtn.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-          sidebarToggleBtn.style.opacity = '1';
-          sidebarToggleBtn.style.transform = 'scale(1)';
-          sidebarToggleBtn.style.pointerEvents = 'auto';
-        }
-      });
-
-      // Đóng sidebar khi navbar mở
-      navbarCollapse.addEventListener('show.bs.collapse', function () {
-        if (sidebar && sidebar.classList.contains('active')) {
-          sidebar.classList.add('closing');
-          setTimeout(() => {
-            sidebar.classList.remove('active');
-            sidebar.classList.remove('closing');
-            sidebarToggleBtn.classList.remove('active');
-          }, 300);
-        }
-      });
-    }
 
     // Hàm scroll section vào giữa màn hình
     function scrollToCenter(targetSection) {
