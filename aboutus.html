@@ -714,10 +714,17 @@
             .site-navbar .container {
                 padding-left: 15px;
                 padding-right: 15px;
-                flex-wrap: wrap;
                 display: flex;
                 align-items: center;
                 position: relative;
+                justify-content: space-between;
+            }
+
+            /* Spacer để giữ khoảng cách */
+            .site-navbar .container::before {
+                content: '';
+                flex: 1 1 auto;
+                order: 1;
             }
 
             .site-name {
@@ -725,16 +732,16 @@
                 flex-shrink: 0;
                 white-space: nowrap;
                 overflow: visible;
-                flex: 0 0 auto;
+                order: 0;
             }
 
-            /* Navbar toggler - NGOÀI CÙNG BÊN PHẢI */
+            /* Navbar toggler - CỐ ĐỊNH BÊN PHẢI */
             .navbar-toggler {
                 flex-shrink: 0;
-                margin-left: auto;
                 padding: 6px 10px;
                 border-color: rgba(201, 169, 97, 0.5);
-                order: 999;
+                order: 2;
+                position: relative;
             }
 
             .navbar-toggler-icon {
@@ -742,11 +749,21 @@
                 height: 20px;
             }
 
-            /* Navbar collapse - xuống dòng dưới */
+            /* Navbar collapse - absolute để không ảnh hưởng layout trên */
             .navbar-collapse {
-                flex-basis: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
                 width: 100%;
-                order: 1000;
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(15px);
+                z-index: 1000;
+            }
+
+            .navbar-collapse.show,
+            .navbar-collapse.collapsing {
+                display: block;
             }
 
             .site-navbar .nav-link {
