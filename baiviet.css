@@ -287,8 +287,24 @@ body::before {
 }
 
 
-/* Nút toggle sidebar trong navbar */
+/* Navbar container layout */
+.site-navbar .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0;
+}
 
+.site-navbar .navbar-brand {
+    flex-shrink: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: auto;
+}
+
+/* Nút toggle sidebar trong navbar */
 .sidebar-toggle-btn {
     background: linear-gradient(135deg, #d4af37, #daa520);
     border: 2px solid #d4af37;
@@ -305,8 +321,11 @@ body::before {
     font-size: 1.1rem;
     position: relative;
     overflow: hidden;
-    margin-left: 30px;
-    z-index: 1101;
+    margin-right: 15px;
+    margin-left: 0;
+    z-index: 1;
+    flex-shrink: 0;
+    order: -1;
 }
 
 .sidebar-toggle-btn::before {
@@ -362,6 +381,16 @@ body::before {
 
 /* Tablet */
 @media (max-width: 992px) {
+    /* Navbar */
+    .site-navbar .container {
+        padding-left: 10px;
+        padding-right: 15px;
+    }
+
+    .site-navbar .navbar-brand {
+        font-size: 1.4rem;
+    }
+
     /* Sidebar */
     .sidebar {
         width: 260px;
@@ -376,7 +405,7 @@ body::before {
     .sidebar-toggle-btn {
         width: 40px;
         height: 40px;
-        margin-left: 20px;
+        margin-right: 12px;
         font-size: 1rem;
     }
 
@@ -397,6 +426,17 @@ body::before {
 
 /* Mobile */
 @media (max-width: 768px) {
+    /* Navbar adjustments */
+    .site-navbar .container {
+        padding-left: 5px;
+        padding-right: 10px;
+    }
+
+    .site-navbar .navbar-brand {
+        margin-left: 0;
+        font-size: 1.3rem;
+    }
+
     /* Sidebar fullscreen overlay style */
     .sidebar {
         width: 100%;
@@ -436,15 +476,16 @@ body::before {
         visibility: visible;
     }
 
-    /* Toggle button mobile */
+    /* Toggle button mobile - relative trong navbar */
     .sidebar-toggle-btn {
-        width: 38px;
-        height: 38px;
-        margin-left: 15px;
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
         font-size: 0.95rem;
-        position: fixed;
-        left: 10px;
-        top: 15px;
+        position: relative;
+        left: auto;
+        top: auto;
     }
 
     /* Content container */
@@ -489,6 +530,16 @@ body::before {
 
 /* Mobile nhỏ */
 @media (max-width: 576px) {
+    /* Navbar compact */
+    .site-navbar .container {
+        padding-left: 3px;
+        padding-right: 8px;
+    }
+
+    .site-navbar .navbar-brand {
+        font-size: 1.2rem;
+    }
+
     /* Sidebar compact */
     .sidebar {
         max-width: 280px;
@@ -504,14 +555,16 @@ body::before {
         font-size: 0.85rem;
     }
 
-    /* Toggle button compact */
+    /* Toggle button compact - relative trong navbar */
     .sidebar-toggle-btn {
-        width: 36px;
-        height: 36px;
-        margin-left: 10px;
+        width: 38px;
+        height: 38px;
+        margin-left: 8px;
+        margin-right: 8px;
         font-size: 0.9rem;
-        left: 8px;
-        top: 12px;
+        position: relative;
+        left: auto;
+        top: auto;
     }
 
     /* Content */
