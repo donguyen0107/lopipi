@@ -1510,30 +1510,25 @@ a:not(.btn):hover {
     .site-navbar .container {
         padding-left: 15px;
         padding-right: 15px;
-        flex-wrap: nowrap;
-        gap: 0;
+        flex-wrap: wrap;
         display: flex;
         align-items: center;
-        justify-content: space-between;
     }
 
     .site-name {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         flex-shrink: 0;
         white-space: nowrap;
         overflow: visible;
         margin-right: auto;
-        order: 0;
     }
 
-    /* Navbar toggler - ổn định bên phải */
+    /* Navbar toggler - nằm bên phải */
     .navbar-toggler {
         flex-shrink: 0;
         margin-left: auto;
         padding: 6px 10px;
         border-color: rgba(201, 169, 97, 0.5);
-        order: 1;
-        position: relative;
     }
 
     .navbar-toggler-icon {
@@ -1541,10 +1536,10 @@ a:not(.btn):hover {
         height: 20px;
     }
 
-    /* Navbar collapse - hiển thị bên phải nút toggle */
+    /* Navbar collapse - xuống dòng dưới */
     .navbar-collapse {
-        order: 2;
         flex-basis: 100%;
+        width: 100%;
     }
 
     .site-navbar .nav-link {
