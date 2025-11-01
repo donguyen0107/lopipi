@@ -706,7 +706,38 @@
 
         /* Mobile */
         @media (max-width: 768px) {
-            /* Navbar mobile */
+            /* Navbar mobile - TỐI ƯU LAYOUT */
+            .site-navbar {
+                padding: 8px 0;
+            }
+
+            .site-navbar .container {
+                padding-left: 10px;
+                padding-right: 10px;
+                flex-wrap: nowrap;
+                gap: 0;
+            }
+
+            .site-name {
+                font-size: 1.3rem;
+                flex-shrink: 1;
+                min-width: 0;
+                overflow: visible;
+                white-space: nowrap;
+            }
+
+            .navbar-toggler {
+                flex-shrink: 0;
+                margin-left: 10px;
+                padding: 6px 10px;
+                border-color: rgba(201, 169, 97, 0.5);
+            }
+
+            .navbar-toggler-icon {
+                width: 20px;
+                height: 20px;
+            }
+
             .site-navbar .nav-link {
                 padding: 10px 16px !important;
                 font-size: 0.95rem;
@@ -831,13 +862,29 @@
 
         /* Mobile nhỏ */
         @media (max-width: 576px) {
-            /* Navbar compact */
-            .site-name {
-                font-size: 1.2rem;
+            /* Navbar compact - TỐI ƯU */
+            .site-navbar {
+                padding: 6px 0;
             }
 
             .site-navbar .container {
-                padding: 0 10px;
+                padding: 0 8px;
+                flex-wrap: nowrap;
+            }
+
+            .site-name {
+                font-size: 1.15rem;
+                letter-spacing: 0.5px;
+            }
+
+            .navbar-toggler {
+                padding: 5px 8px;
+                margin-left: 8px;
+            }
+
+            .navbar-toggler-icon {
+                width: 18px;
+                height: 18px;
             }
 
             /* Hero compact */

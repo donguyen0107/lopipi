@@ -287,24 +287,20 @@ body::before {
 }
 
 
-/* Navbar container layout */
+/* Navbar container layout - DESKTOP */
 .site-navbar .container {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 0;
+    position: relative;
 }
 
 .site-navbar .navbar-brand {
-    flex-shrink: 1;
-    min-width: 0;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     margin-right: auto;
 }
 
-/* Nút toggle sidebar trong navbar */
+/* Nút toggle sidebar trong navbar - DESKTOP */
 .sidebar-toggle-btn {
     background: linear-gradient(135deg, #d4af37, #daa520);
     border: 2px solid #d4af37;
@@ -322,7 +318,6 @@ body::before {
     position: relative;
     overflow: hidden;
     margin-right: 15px;
-    margin-left: 0;
     z-index: 1;
     flex-shrink: 0;
     order: -1;
@@ -426,15 +421,46 @@ body::before {
 
 /* Mobile */
 @media (max-width: 768px) {
-    /* Navbar adjustments */
+    /* Navbar adjustments - ĐẢM BẢO NÚT VÀ CHỮ CÙNG HÀNG */
+    .site-navbar {
+        padding: 8px 0;
+    }
+
     .site-navbar .container {
-        padding-left: 5px;
+        padding-left: 8px;
         padding-right: 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 0;
     }
 
     .site-navbar .navbar-brand {
         margin-left: 0;
-        font-size: 1.3rem;
+        font-size: 1.25rem;
+        flex-shrink: 1;
+        min-width: 0;
+        white-space: nowrap;
+        overflow: visible;
+        margin-right: auto;
+    }
+
+    /* Toggle button mobile - CÙNG HÀNG VỚI CHỮ */
+    .sidebar-toggle-btn {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        margin-left: 0;
+        font-size: 0.95rem;
+        position: relative;
+        flex-shrink: 0;
+        order: -1;
+    }
+
+    /* Navbar toggler (hamburger menu) */
+    .navbar-toggler {
+        flex-shrink: 0;
+        margin-left: 10px;
     }
 
     /* Sidebar fullscreen overlay style */
@@ -474,18 +500,6 @@ body::before {
     .sidebar-overlay.active {
         opacity: 1;
         visibility: visible;
-    }
-
-    /* Toggle button mobile - relative trong navbar */
-    .sidebar-toggle-btn {
-        width: 40px;
-        height: 40px;
-        margin-left: 10px;
-        margin-right: 10px;
-        font-size: 0.95rem;
-        position: relative;
-        left: auto;
-        top: auto;
     }
 
     /* Content container */
@@ -530,14 +544,38 @@ body::before {
 
 /* Mobile nhỏ */
 @media (max-width: 576px) {
-    /* Navbar compact */
+    /* Navbar compact - ĐẢM BẢO NÚT VÀ CHỮ CÙNG HÀNG */
+    .site-navbar {
+        padding: 6px 0;
+    }
+
     .site-navbar .container {
-        padding-left: 3px;
+        padding-left: 5px;
         padding-right: 8px;
+        flex-wrap: nowrap;
     }
 
     .site-navbar .navbar-brand {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* Toggle button compact - CÙNG HÀNG */
+    .sidebar-toggle-btn {
+        width: 38px;
+        height: 38px;
+        margin-right: 8px;
+        margin-left: 0;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+        order: -1;
+    }
+
+    /* Navbar toggler compact */
+    .navbar-toggler {
+        padding: 6px 10px;
+        font-size: 1rem;
+        margin-left: 8px;
     }
 
     /* Sidebar compact */
@@ -553,18 +591,6 @@ body::before {
 
     .sidebar a i {
         font-size: 0.85rem;
-    }
-
-    /* Toggle button compact - relative trong navbar */
-    .sidebar-toggle-btn {
-        width: 38px;
-        height: 38px;
-        margin-left: 8px;
-        margin-right: 8px;
-        font-size: 0.9rem;
-        position: relative;
-        left: auto;
-        top: auto;
     }
 
     /* Content */
