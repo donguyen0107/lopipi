@@ -21,6 +21,54 @@ body {
     overflow-x: hidden;
 }
 
+/* Style cho nút Tham quan 3D */
+.nav-link.tour-3d {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.25));
+    border-radius: 8px;
+    padding: 8px 16px !important;
+    margin-left: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link.tour-3d::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-link.tour-3d:hover::before {
+    left: 100%;
+}
+
+.nav-link.tour-3d:hover {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.35));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    border-color: rgba(212, 175, 55, 0.5);
+}
+
+.nav-link.tour-3d i {
+    color: #d4af37;
+    animation: vrPulse 2s ease-in-out infinite;
+}
+
+@keyframes vrPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
 
 /* Navbar trong suốt hơn với animation */
 
@@ -1650,6 +1698,35 @@ a:not(.btn):hover {
     .dropdown-menu a {
         padding: 12px 20px;
         font-size: 0.95rem;
+    }
+
+    /* Nút Tham quan 3D responsive mobile - XUỐNG DƯỚI CÙNG */
+    .nav-item-3d {
+        order: 999;
+        width: 100%;
+        margin-top: 10px;
+        border-top: 1px solid rgba(212, 175, 55, 0.2);
+        padding-top: 10px;
+    }
+
+    .nav-link.tour-3d {
+        margin-left: 0;
+        display: block;
+        text-align: center;
+        font-size: 0.95rem;
+        width: 100%;
+        border-radius: 8px;
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.3));
+        border: 1px solid rgba(212, 175, 55, 0.4);
+    }
+
+    .nav-link.tour-3d i {
+        font-size: 1rem;
+    }
+
+    /* Đảm bảo các nav-item khác hiển thị trước */
+    .navbar-collapse .navbar-nav .nav-item:not(.nav-item-3d) {
+        order: 0;
     }
 
     /* Hero */
