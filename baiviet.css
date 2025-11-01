@@ -432,6 +432,7 @@ body::before {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        position: relative;
     }
 
     .site-navbar .navbar-brand {
@@ -440,10 +441,11 @@ body::before {
         flex-shrink: 0;
         white-space: nowrap;
         overflow: visible;
-        margin-right: auto;
+        flex: 0 0 auto;
+        order: 0;
     }
 
-    /* Toggle button mobile - BÊN TRÁI CHỮ */
+    /* Toggle button mobile - BÊN TRÁI */
     .sidebar-toggle-btn {
         width: 38px;
         height: 38px;
@@ -455,17 +457,19 @@ body::before {
         order: -1;
     }
 
-    /* Navbar toggler (hamburger menu) - BÊN PHẢI */
+    /* Navbar toggler (hamburger menu) - NGOÀI CÙNG BÊN PHẢI */
     .navbar-toggler {
         flex-shrink: 0;
         margin-left: auto;
         padding: 6px 10px;
+        order: 999;
     }
 
     /* Navbar collapse - xuống dòng */
     .navbar-collapse {
         flex-basis: 100%;
         width: 100%;
+        order: 1000;
     }
 
     /* Sidebar fullscreen overlay style */

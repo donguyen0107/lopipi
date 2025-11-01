@@ -1513,6 +1513,7 @@ a:not(.btn):hover {
         flex-wrap: wrap;
         display: flex;
         align-items: center;
+        position: relative;
     }
 
     .site-name {
@@ -1520,15 +1521,16 @@ a:not(.btn):hover {
         flex-shrink: 0;
         white-space: nowrap;
         overflow: visible;
-        margin-right: auto;
+        flex: 0 0 auto;
     }
 
-    /* Navbar toggler - nằm bên phải */
+    /* Navbar toggler - NGOÀI CÙNG BÊN PHẢI */
     .navbar-toggler {
         flex-shrink: 0;
         margin-left: auto;
         padding: 6px 10px;
         border-color: rgba(201, 169, 97, 0.5);
+        order: 999;
     }
 
     .navbar-toggler-icon {
@@ -1540,6 +1542,7 @@ a:not(.btn):hover {
     .navbar-collapse {
         flex-basis: 100%;
         width: 100%;
+        order: 1000;
     }
 
     .site-navbar .nav-link {
