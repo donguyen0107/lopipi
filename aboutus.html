@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Về Chúng Tôi - Kính Lúp Thời Gian</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: #0a0a0a;
+            color: #fff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        /* Navbar với hiệu ứng giống style.css */
+        
+        .site-navbar {
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(8px) saturate(120%);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 1px solid rgba(201, 169, 97, 0.1);
+        }
+        
+        .site-navbar.scrolled {
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(15px) saturate(140%);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .site-navbar:hover {
+            background: rgba(0, 0, 0, 0.55);
+            border-bottom-color: rgba(201, 169, 97, 0.25);
+        }
+        
+        .site-name {
+            font-weight: 700;
+            font-size: 1.6rem;
+            background: linear-gradient(135deg, #f5e6ca, #c9a961, #b8860b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        
+        .site-name:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+        
+        .site-navbar .nav-link {
+            position: relative;
+            color: #e8e8e8;
+            transition: all 0.3s ease;
+            padding: 8px 16px !important;
+        }
+        
+        .site-navbar .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #c9a961, #d4af37);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .site-navbar .nav-link:hover {
+            color: #c9a961;
+            transform: translateY(-2px);
+        }
+        
+        .site-navbar .nav-link:hover::after {
+            width: 80%;
+        }
+        /* Dropdown styling */
+        
+        .dropdown-menu {
+            background: rgba(10, 10, 10, 0.95);
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .dropdown-menu a {
+            color: #e8e8e8;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 10px 20px;
+        }
+        
+        .dropdown-menu a::before {
+            content: '→';
+            position: absolute;
+            left: 8px;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+            color: #c9a961;
+        }
+        
+        .dropdown-menu a:hover {
+            background: rgba(201, 169, 97, 0.15);
+            color: #c9a961;
+            padding-left: 30px;
+        }
+        
+        .dropdown-menu a:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .dropdown-menu.fade-in {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-menu.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Hero Section với animation */
+        
+        .hero-section {
+            height: 100vh;
+            background: url('sources/Z4321694674342_8659E.jpg') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-attachment: fixed;
+        }
+        
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.5));
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .hero-section>div {
+            position: relative;
+            z-index: 2;
+            animation: heroContentFadeUp 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @keyframes heroContentFadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .hero-subtitle {
+            color: #e8d5a0;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 400;
+            animation: fadeInDown 1s ease-out 0.3s both;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Aurora Text */
+        
+        .aurora-text {
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-weight: 800;
+            letter-spacing: 0px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #faf3e0, #e8d5a0, #c9a961, #b8860b, #c9a961, #e8d5a0);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: auroraShiftLux 10s ease infinite, scaleIn 1s ease-out 0.4s both;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 90vw;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes auroraShiftLux {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        /* About Section */
+        
+        .about-section {
+            background: linear-gradient(180deg, #1a1a1a 0%, #252525 50%, #0a0a0a 100%);
+            color: #fff;
+            padding: 100px 8%;
+            overflow: hidden;
+        }
+        
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .about-left {
+            flex: 1;
+            min-width: 300px;
+            animation: slideInLeft 1s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .about-left h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: #e8d5a0;
+            font-weight: 700;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .about-left p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 22px;
+            color: #d0d0d0;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .about-right {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            animation: slideInRight 1s ease-out 0.2s both;
+        }
+        /* Swiper Container với hiệu ứng */
+        
+        .tranding-slider {
+            height: 450px;
+            padding: 40px 0;
+            position: relative;
+        }
+        
+        .tranding-slide {
+            width: 400px;
+            height: 350px;
+            position: relative;
+            transition: transform 0.6s cubic-bezier(.2, .8, .2, 1), box-shadow 0.6s;
+        }
+        
+        .tranding-slide-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(201, 169, 97, 0.25);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(201, 169, 97, 0.2);
+            transition: all 0.6s ease;
+        }
+        
+        .tranding-slide-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease, filter 0.4s;
+        }
+        
+        .tranding-slide:hover .tranding-slide-img {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85), 0 0 50px rgba(201, 169, 97, 0.5);
+            border-color: #d4af37;
+        }
+        
+        .tranding-slide:hover .tranding-slide-img img {
+            transform: scale(1.1);
+            filter: brightness(1.15) saturate(1.1);
+        }
+        /* Swiper Navigation với hiệu ứng vàng */
+        
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: #0a0a0a !important;
+            background: linear-gradient(135deg, #d4af37, #daa520) !important;
+            width: 60px !important;
+            height: 60px !important;
+            border-radius: 50% !important;
+            border: 2px solid #d4af37 !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4) !important;
+        }
+        
+        .swiper-button-prev:hover,
+        .swiper-button-next:hover {
+            background: linear-gradient(135deg, #e5c158, #d4af37) !important;
+            border-color: #e5c158 !important;
+            transform: scale(1.18) !important;
+            box-shadow: 0 15px 45px rgba(212, 175, 55, 0.7) !important;
+        }
+        
+        .swiper-button-prev:active,
+        .swiper-button-next:active {
+            transform: scale(1.05) !important;
+        }
+        
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            font-size: 20px !important;
+            font-weight: bold !important;
+        }
+        /* Swiper Pagination */
+        
+        .swiper-pagination-bullet {
+            background: #d4af37 !important;
+            opacity: 0.5 !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .swiper-pagination-bullet-active {
+            opacity: 1 !important;
+            background: #d4af37 !important;
+            transform: scale(1.3) !important;
+        }
+        /* Footer với animations */
+        
+        .site-footer {
+            background: #0a0a0a;
+            color: #d0d0d0;
+            padding: 80px 8%;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            border-top: 2px solid rgba(201, 169, 97, 0.25);
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .footer-container>div {
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+        
+        .footer-container>div:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        
+        .footer-container>div:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .footer-container>div:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+        
+        .footer-container>div:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+        
+        .footer-logo {
+            width: 80px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            filter: drop-shadow(0 0 15px rgba(201, 169, 97, 0.4));
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+        
+        .footer-logo:hover {
+            transform: scale(1.15) rotate(8deg);
+            filter: drop-shadow(0 0 25px rgba(201, 169, 97, 0.7));
+        }
+        
+        .footer-about {
+            max-width: 350px;
+        }
+        
+        .footer-about p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #b8b8b8;
+            margin-bottom: 25px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .footer-social a {
+            color: #c9a961;
+            margin-right: 15px;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-social a:hover {
+            color: #e8d5a0;
+            transform: scale(1.2) translateY(-5px) rotate(5deg);
+        }
+        
+        .footer-links h4 {
+            color: #e8d5a0;
+            margin-bottom: 20px;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .footer-links a {
+            display: block;
+            color: #a8a8a8;
+            text-decoration: none;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .footer-links a::before {
+            content: '▸';
+            position: absolute;
+            left: -15px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            color: #c9a961;
+        }
+        
+        .footer-links a:hover {
+            color: #e8d5a0;
+            padding-left: 15px;
+        }
+        
+        .footer-links a:hover::before {
+            opacity: 1;
+            left: 0;
+        }
+        
+        .footer-divider {
+            border: none;
+            border-top: 1px solid rgba(201, 169, 97, 0.25);
+            margin: 40px 0;
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .footer-bottom p {
+            font-size: 0.95rem;
+            color: #888;
+        }
+        
+        .back-to-top {
+            background: linear-gradient(135deg, #c9a961, #b8860b);
+            color: #0a0a0a;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(201, 169, 97, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .back-to-top::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s, height 0.4s;
+        }
+        
+        .back-to-top:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .back-to-top:hover {
+            background: linear-gradient(135deg, #e8d5a0, #c9a961);
+            transform: translateY(-8px) rotate(360deg);
+            box-shadow: 0 12px 40px rgba(201, 169, 97, 0.6);
+        }
+        
+        .back-to-top:active {
+            transform: translateY(-4px) scale(0.95);
+        }
+        
+        .wave-text {
+            display: inline-block;
+            position: relative;
+            animation: waveMoveLux 3s infinite linear;
+            background: linear-gradient(90deg, #e8d5a0, #c9a961, #b8860b, #c9a961, #e8d5a0, #c9a961, #b8860b, #c9a961, #e8d5a0);
+            background-size: 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        @keyframes waveMoveLux {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+        /* Reveal Animation */
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Responsive */
+        
+        @media (max-width: 992px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-left {
+                max-width: 100%;
+            }
+            .tranding-slider {
+                height: 400px;
+            }
+            .tranding-slide {
+                width: 320px;
+                height: 280px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .aurora-text {
+                font-size: clamp(2rem, 8vw, 3.5rem);
+                padding: 0 10px;
+            }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+            .footer-about p {
+                max-width: 100%;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .tranding-slide {
+                width: 280px;
+                height: 250px;
+            }
+            .swiper-button-prev,
+            .swiper-button-next {
+                width: 50px !important;
+                height: 50px !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .aurora-text {
+                font-size: clamp(1.5rem, 10vw, 2.5rem);
+            }
+        }
+        /* Smooth transitions for all elements */
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+        
+        p,
+        span,
+        div,
+        a {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-navbar">
+        <div class="container">
+            <a class="navbar-brand site-name animate__animated animate__fadeInDown wave-text" href="index.html">Time Capsule</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-3">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="baiVietDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Bài viết
+                        </a>
+                        <ul class="dropdown-menu fade-in" aria-labelledby="baiVietDropdown">
+                            <li><a class="dropdown-item" href="baiviet.html#tongquan">Tổng quan</a></li>
+                            <li><a class="dropdown-item" href="baiviet.html#lichsu">Lịch sử</a></li>
+                            <li><a class="dropdown-item" href="baiviet.html#vanhoa">Văn hóa</a></li>
+                            <li><a class="dropdown-item" href="baiviet.html#dulich">Du lịch</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="veChungToiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Về chúng tôi
+                        </a>
+                        <ul class="dropdown-menu fade-in" aria-labelledby="veChungToiDropdown">
+                            <li><a class="dropdown-item" href="#gioithieu">Giới thiệu</a></li>
+                            <li><a class="dropdown-item" href="#mucdich">Mục đích</a></li>
+                            <li><a class="dropdown-item" href="#loinhangui">Đôi lời nhắn gửi</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="index.html"><i class="fa fa-home"></i></a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="nguon.html">Tư liệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link project-logo" href="#"><i class="fa fa-landmark"></i> Di sản Việt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <header class="hero-section text-center text-light d-flex align-items-center justify-content-center" id="hero">
+        <div>
+            <h1 class="aurora-text">Về chúng tôi</h1>
+            <p class="hero-subtitle wave-text">Giới thiệu - Mục đích - Đôi lời nhắn gửi</p>
+        </div>
+    </header>
+
+    <!-- Giới thiệu -->
+    <section class="about-section reveal" id="gioithieu">
+        <div class="container about-container">
+            <div class="about-left">
+                <h2 class="aurora-text">Giới thiệu</h2>
+                <p>Kính Lúp Thời Gian là dự án bảo tồn và lưu giữ di sản văn hóa Việt Nam qua hình ảnh và câu chuyện. Chúng tôi mong muốn mang đến cái nhìn sâu sắc về lịch sử, con người và văn hóa đặc sắc của dân tộc.</p>
+                <p>Mỗi bức ảnh, mỗi câu chuyện đều là một mảnh ghép quý giá trong bức tranh toàn cảnh về di sản Việt Nam.</p>
+            </div>
+            <div class="about-right">
+                <div class="swiper tranding-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="https://picsum.photos/id/1039/600/400" alt="Image 1">
+                            </div>
+                        </div>
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="https://picsum.photos/id/1015/600/400" alt="Image 2">
+                            </div>
+                        </div>
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="https://picsum.photos/id/1018/600/400" alt="Image 3">
+                            </div>
+                        </div>
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="https://picsum.photos/id/1025/600/400" alt="Image 4">
+                            </div>
+                        </div>
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="https://picsum.photos/id/1035/600/400" alt="Image 5">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mục đích -->
+    <section class="about-section reveal" id="mucdich" style="background: linear-gradient(180deg, #2b2b2b 0%, #1a1a1a 100%);">
+        <div class="container about-container" style="flex-direction: row-reverse;">
+            <div class="about-left">
+                <h2 class="aurora-text">Mục đích</h2>
+                <p>Chúng tôi hướng đến việc tạo ra một kho tàng số toàn diện về di sản văn hóa Việt Nam, giúp thế hệ trẻ hiểu và tự hào về nguồn gốc của mình.</p>
+                <p>Thông qua công nghệ hiện đại, chúng tôi mong muốn bảo vệ và lan tỏa những giá trị văn hóa truyền thống đến với cộng đồng toàn cầu.</p>
+            </div>
+
+            <div class="about-right">
+                <div class="swiper tranding-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="https://picsum.photos/id/1040/600/400" alt="Purpose 1">
+                            </div>
+                        </div>
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="https://picsum.photos/id/1041/600/400" alt="Purpose 2">
+                            </div>
+                        </div>
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="https://picsum.photos/id/1043/600/400" alt="Purpose 3">
+                            </div>
+                        </div>
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="https://picsum.photos/id/1044/600/400" alt="Purpose 4">
+                            </div>
+                        </div>
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="https://picsum.photos/id/1045/600/400" alt="Purpose 5">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Đôi lời nhắn gửi -->
+    <section class="about-section reveal" id="loinhangui" style="background: linear-gradient(180deg, #111 0%, #000 100%);">
+        <div class="container about-container">
+            <div class="about-left">
+                <h2 class="aurora-text">Đôi lời nhắn gửi</h2>
+                <p>Cảm ơn bạn đã ghé thăm và quan tâm đến dự án của chúng tôi. Mỗi lượt truy cập, mỗi chia sẻ đều góp phần lan tỏa yêu thương và tri thức về di sản Việt Nam.</p>
+                <p>Hãy cùng chúng tôi bảo vệ và phát huy những giá trị văn hóa quý báu này cho thế hệ mai sau.</p>
+            </div>
+            <div class="about-right">
+                <div class="swiper tranding-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="https://picsum.photos/id/1024/600/400" alt="Message 1">
+                            </div>
+                        </div>
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="https://picsum.photos/id/1028/600/400" alt="Message 2">
+                            </div>
+                        </div>
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="https://picsum.photos/id/1029/600/400" alt="Message 3">
+                            </div>
+                        </div>
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="https://picsum.photos/id/1031/600/400" alt="Message 4">
+                            </div>
+                        </div>
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="https://picsum.photos/id/1033/600/400" alt="Message 5">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer reveal">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo-wrapper mb-3">
+                    <i class="fas fa-landmark fa-3x" style="color: #d4af37;"></i>
+                </div>
+                <h5 class="mb-3" style="color: #d4af37;">The Time Capsule</h5>
+                <p>Lan tỏa giá trị di sản văn hóa Việt Nam đến thế hệ trẻ và cộng đồng. Cùng nhau bảo tồn và phát huy những giá trị truyền thống quý báu.</p>
+                <div class="footer-social mt-4">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Thông Tin</h4>
+                <a href="#about"><i class="fas fa-angle-right me-2"></i>Về Chúng Tôi</a>
+                <a href="#baiviet"><i class="fas fa-angle-right me-2"></i>Bài Viết</a>
+                <a href="#timhieu"><i class="fas fa-angle-right me-2"></i>Tìm Hiểu</a>
+                <a href="#"><i class="fas fa-angle-right me-2"></i>Liên Hệ</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Hỗ Trợ</h4>
+                <a href="#"><i class="fas fa-angle-right me-2"></i>Câu Hỏi Thường Gặp</a>
+                <a href="#"><i class="fas fa-angle-right me-2"></i>Điều Khoản Sử Dụng</a>
+                <a href="#"><i class="fas fa-angle-right me-2"></i>Chính Sách Bảo Mật</a>
+                <a href="#"><i class="fas fa-angle-right me-2"></i>Hướng Dẫn</a>
+            </div>
+
+            <!-- BỎ CỘT KẾT NỐI -->
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p>
+                <i class="far fa-copyright me-1"></i>2025
+                <span class="wave-text">The time capsule website</span>. All rights reserved
+            </p>
+            <a href="#hero" class="back-to-top" title="Về đầu trang">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script>
+        // Hàm scroll section vào giữa màn hình
+        function scrollToCenter(targetSection) {
+            if (targetSection) {
+                const targetPosition = targetSection.offsetTop;
+                const windowHeight = window.innerHeight;
+                const sectionHeight = targetSection.offsetHeight;
+
+                // Tính toán vị trí để section nằm ở giữa màn hình
+                const scrollToPosition = targetPosition - (windowHeight / 2) + (sectionHeight / 2);
+
+                window.scrollTo({
+                    top: scrollToPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Xử lý khi trang được load với hash (ví dụ: aboutus.html#gioithieu)
+        window.addEventListener('load', () => {
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                // Đợi một chút để đảm bảo trang đã load hoàn toàn
+                setTimeout(() => {
+                    scrollToCenter(targetSection);
+                }, 100);
+            }
+        });
+
+        // Xử lý click vào link navbar dropdown để scroll mục vào giữa màn hình
+        const dropdownLinks = document.querySelectorAll('.dropdown-menu a[href^="#"]');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Ngăn hành vi mặc định
+
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                scrollToCenter(targetSection);
+            });
+        });
+
+        // Scroll Reveal Animation
+        const reveals = document.querySelectorAll('.reveal');
+
+        function handleScroll() {
+            for (const el of reveals) {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 80 && rect.bottom > 0) {
+                    el.classList.add('in-view');
+                }
+            }
+        }
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+
+        // Dropdown hover effect
+        document.querySelectorAll('.navbar .dropdown').forEach(dropdown => {
+            dropdown.addEventListener('mouseenter', () => {
+                const menu = dropdown.querySelector('.dropdown-menu');
+                const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
+                const bsDropdown = bootstrap.Dropdown.getOrCreateInstance(toggle);
+                bsDropdown.show();
+            });
+            dropdown.addEventListener('mouseleave', () => {
+                const menu = dropdown.querySelector('.dropdown-menu');
+                const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
+                const bsDropdown = bootstrap.Dropdown.getOrCreateInstance(toggle);
+                bsDropdown.hide();
+            });
+        });
+
+        // Initialize Swiper for all carousels
+        const swipers = document.querySelectorAll('.tranding-slider');
+        swipers.forEach(slider => {
+            new Swiper(slider, {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                loop: true,
+                slidesPerView: 'auto',
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 2.5,
+                },
+                pagination: {
+                    el: slider.querySelector('.swiper-pagination'),
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: slider.querySelector('.swiper-button-next'),
+                    prevEl: slider.querySelector('.swiper-button-prev'),
+                },
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                }
+            });
+        });
+
+        // Back to top button
+        document.querySelector('.back-to-top').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+
+
+/* Refs box (nổi bật trên nền ảnh) */
+.refs-box {
+  margin: 28px auto 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  text-align: left;
+}
+.refs-box h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.25rem;
+  color: #ffd97a;
+}
+.refs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+.refs-list li {
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.03);
+  border-left: 4px solid rgba(212,175,55,0.95);
+  border-radius: 8px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.refs-list li:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.06);
+}
+.refs-list strong { display:block; color:#fff; margin-bottom:4px; font-weight:700; }
+.refs-list a {
+  color: #ffd97a;
+  text-decoration: underline;
+  word-break: break-all;
+}
+.refs-note {
+  margin-top: 10px;
+  color: #e0d9c2;
+  font-size: 0.95rem;
+}
+

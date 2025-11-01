@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang chủ - The Time Capsule</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .aurora-text {
+            position: relative;
+            display: inline-block;
+            overflow: visible !important;
+            padding: 15px 25px;
+        }
+
+        .aurora-text::before {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            background: linear-gradient(135deg, #faf3e0, #e8d5a0, #c9a961, #b8860b, #c9a961, #e8d5a0);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: blur(20px) brightness(1.5);
+            opacity: 0.6;
+            animation: auroraShiftLux 10s ease infinite;
+        }
+
+        .aurora-text {
+            filter: none !important;
+        }
+        /* Fix container cắt chữ */
+
+        .section-header {
+            overflow: visible !important;
+        }
+
+        .section-header h2 {
+            overflow: visible !important;
+            padding: 20px 0;
+            line-height: 1.6;
+        }
+
+        .baiviet {
+            overflow: visible !important;
+        }
+
+        .hero-section {
+            overflow: visible !important;
+            background-attachment: scroll !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-navbar">
+        <div class="container">
+            <a class="navbar-brand site-name animate__animated animate__fadeInDown wave-text" href="index.html">Time Capsule</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-3">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="baiVietDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Bài viết
+                        </a>
+                        <ul class="dropdown-menu fade-in" aria-labelledby="baiVietDropdown">
+                            <li><a class="dropdown-item" href="baiviet.html#tongquan">Tổng quan</a></li>
+                            <li><a class="dropdown-item" href="baiviet.html#lichsu">Lịch sử</a></li>
+                            <li><a class="dropdown-item" href="baiviet.html#vanhoa">Văn hóa</a></li>
+                            <li><a class="dropdown-item" href="baiviet.html#dulich">Du lịch</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="veChungToiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Về chúng tôi
+                        </a>
+                        <ul class="dropdown-menu fade-in" aria-labelledby="veChungToiDropdown">
+                            <li><a class="dropdown-item" href="aboutus.html#gioithieu">Giới thiệu</a></li>
+                            <li><a class="dropdown-item" href="aboutus.html#mucdich">Mục đích</a></li>
+                            <li><a class="dropdown-item" href="aboutus.html#loinhangui">Đôi lời nhắn gửi</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="index.html"><i class="fa fa-home"></i></a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="nguon.html">Tư liệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link project-logo" href="#"><i class="fa fa-landmark"></i> Di sản Việt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Premium (KHÔNG CÓ NÚT) -->
+    <header class="hero-section text-center text-light d-flex align-items-center justify-content-center" id="hero">
+        <div class="hero-content">
+            <p class="animate__animated animate__fadeInUp hero-subtitle">DI SẢN VĂN HÓA VIỆT NAM</p>
+            <h1 class="aurora-text animate__animated animate__fadeIn" data-text="Đình Thần An Khánh">Đình Thần An Khánh</h1>
+            <p class="hero-description animate__animated animate__fadeInUp animate__delay-1s">
+                Nơi lưu giữ hồn thiêng dân tộc, gìn giữ ký ức lịch sử và văn hóa truyền thống Việt
+            </p>
+        </div>
+    </header>
+
+    <!-- Bài Viết Premium (CÓ 2 NÚT) -->
+    <section class="py-5 text-center baiviet" id="baiviet">
+        <div class="container">
+            <div class="section-header mb-5">
+                <p class="section-subtitle">BỘ SƯU TẬP</p>
+                <h2 class="aurora-text" data-text="Bài Viết Của Page">Bài Viết Của Page</h2>
+                <p class="section-description">Khám phá những câu chuyện lịch sử đầy cảm hứng về Đình Thần An Khánh</p>
+            </div>
+
+            <!-- 2 NÚT Ở ĐÂY -->
+            <div class="hero-buttons mb-5 animate__animated animate__fadeInUp">
+                <a href="#about" class="btn animated-btn me-3">
+                    <i class="fas fa-compass me-2"></i>Khám Phá Ngay
+                </a>
+                <a href="#timhieu" class="btn btn-outline-light btn-outline-premium px-4 py-3">
+                    <i class="fas fa-book me-2"></i>Tìm Hiểu Thêm
+                </a>
+            </div>
+
+            <!-- Infinite carousel -->
+            <div class="infinite-carousel reveal" aria-label="carousel bài viết">
+                <div class="carousel-track">
+                    <div class="carousel-item-wrapper">
+                        <img src="https://picsum.photos/id/1015/800/400" alt="Lịch sử hình thành">
+                        <div class="carousel-overlay">
+                            <h5>Lịch Sử Hình Thành</h5>
+                            <p>Khám phá nguồn gốc và sự phát triển</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item-wrapper">
+                        <img src="https://picsum.photos/id/1020/800/400" alt="Kiến trúc độc đáo">
+                        <div class="carousel-overlay">
+                            <h5>Kiến Trúc Độc Đáo</h5>
+                            <p>Nét đẹp giao thoa Đông Tây</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item-wrapper">
+                        <img src="https://picsum.photos/id/1024/800/400" alt="Lễ hội truyền thống">
+                        <div class="carousel-overlay">
+                            <h5>Lễ Hội Truyền Thống</h5>
+                            <p>Văn hóa tâm linh đậm đà bản sắc</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item-wrapper">
+                        <img src="https://picsum.photos/id/1033/800/400" alt="Di sản văn hóa">
+                        <div class="carousel-overlay">
+                            <h5>Di Sản Văn Hóa</h5>
+                            <p>Giá trị bền vững qua thời gian</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item-wrapper">
+                        <img src="https://picsum.photos/id/1039/800/400" alt="Tương lai phát triển">
+                        <div class="carousel-overlay">
+                            <h5>Tương Lai Phát Triển</h5>
+                            <p>Bảo tồn và phát huy giá trị</p>
+                        </div>
+                    </div>
+                    <!-- Duplicate để hiệu ứng vô hạn -->
+                    <div class="carousel-item-wrapper">
+                        <img src="https://picsum.photos/id/1015/800/400" alt="Lịch sử hình thành">
+                        <div class="carousel-overlay">
+                            <h5>Lịch Sử Hình Thành</h5>
+                            <p>Khám phá nguồn gốc và sự phát triển</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item-wrapper">
+                        <img src="https://picsum.photos/id/1020/800/400" alt="Kiến trúc độc đáo">
+                        <div class="carousel-overlay">
+                            <h5>Kiến Trúc Độc Đáo</h5>
+                            <p>Nét đẹp giao thoa Đông Tây</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item-wrapper">
+                        <img src="https://picsum.photos/id/1024/800/400" alt="Lễ hội truyền thống">
+                        <div class="carousel-overlay">
+                            <h5>Lễ Hội Truyền Thống</h5>
+                            <p>Văn hóa tâm linh đậm đà bản sắc</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item-wrapper">
+                        <img src="https://picsum.photos/id/1033/800/400" alt="Di sản văn hóa">
+                        <div class="carousel-overlay">
+                            <h5>Di Sản Văn Hóa</h5>
+                            <p>Giá trị bền vững qua thời gian</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item-wrapper">
+                        <img src="https://picsum.photos/id/1039/800/400" alt="Tương lai phát triển">
+                        <div class="carousel-overlay">
+                            <h5>Tương Lai Phát Triển</h5>
+                            <p>Bảo tồn và phát huy giá trị</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BỎ NÚT "XEM TẤT CẢ BÀI VIẾT" -->
+        </div>
+    </section>
+
+    <!-- Tìm Hiểu Premium -->
+    <section class="py-5 timhieu" id="timhieu">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <p class="section-subtitle text-light">KHÁM PHÁ</p>
+                <h2 class="text-light mb-4">Tìm Hiểu Sâu Hơn</h2>
+                <p class="section-description text-light">Ba góc nhìn đa chiều về di sản văn hóa Đình Thần An Khánh</p>
+            </div>
+
+            <div class="row reveal g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card hover-card h-100">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1580974928064-5d8a1bc9d5e1" class="card-img-top" alt="Lịch sử">
+                            <div class="card-img-overlay-premium">
+                                <i class="fas fa-history fa-3x"></i>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-3">Lịch Sử</h5>
+                            <p class="card-text">Hành trình hàng trăm năm lưu giữ ký ức dân tộc, từ những ngày đầu thành lập đến hiện tại.</p>
+                            <a href="#" class="btn btn-outline-premium btn-sm mt-3">
+                Tìm Hiểu <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card hover-card h-100">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1590080875839-56a3a5f4c278" class="card-img-top" alt="Kiến trúc">
+                            <div class="card-img-overlay-premium">
+                                <i class="fas fa-building fa-3x"></i>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-3">Kiến Trúc</h5>
+                            <p class="card-text">Công trình mang đậm nét giao thoa văn hóa Đông - Tây, thể hiện tài hoa nghệ nhân xưa.</p>
+                            <a href="#" class="btn btn-outline-premium btn-sm mt-3">
+                Tìm Hiểu <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card hover-card h-100">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1606112219348-204d7d8b94ee" class="card-img-top" alt="Văn hóa">
+                            <div class="card-img-overlay-premium">
+                                <i class="fas fa-theater-masks fa-3x"></i>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-3">Văn Hóa</h5>
+                            <p class="card-text">Nơi lưu giữ tinh hoa văn hóa tâm linh, lễ hội truyền thống của cộng đồng địa phương.</p>
+                            <a href="#" class="btn btn-outline-premium btn-sm mt-3">
+                Tìm Hiểu <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Về Chúng Tôi Premium (CHỈ CÓ TIÊU ĐỀ VÀ NÚT) -->
+    <section class="about-section reveal" id="about">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <p class="section-subtitle">NHIỆM VỤ CỦA CHÚNG TÔI</p>
+                        <h2 class="mb-5">Về Chúng Tôi</h2>
+
+                        <div class="about-buttons">
+                            <button class="btn animated-btn me-3">
+                <i class="fas fa-info-circle me-2"></i>Tìm Hiểu Thêm
+              </button>
+                            <button class="btn btn-outline-light btn-outline-premium">
+                <i class="fas fa-envelope me-2"></i>Liên Hệ
+              </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="about-media-wrapper">
+
+                        <div class="about-video-container">
+                            <video autoplay muted loop playsinline class="about-video">
+                <source src="sources/7145365693814.mp4" type="video/mp4">
+              </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bình Luận Premium -->
+    <section class="comment-section text-light text-center py-5">
+        <div class="overlay"></div>
+        <div class="container position-relative reveal">
+            <div class="section-header mb-5">
+                <p class="section-subtitle">CẢM NHẬN</p>
+                <h2 class="text-light">Chia Sẻ Của Cộng Đồng</h2>
+                <p class="section-description text-light">Những góc nhìn đa dạng về di sản văn hóa từ du khách và địa phương</p>
+            </div>
+
+            <div class="slider">
+                <div class="item">
+                    <div class="testimonial-header mb-3">
+                        <i class="fas fa-quote-left fa-2x mb-3" style="color: #d4af37;"></i>
+                        <h3>Trải Nghiệm Tuyệt Vời</h3>
+                    </div>
+                    <p>Không gian yên tĩnh và trang nghiêm, mang đến cảm giác bình yên. Kiến trúc độc đáo và giàu giá trị lịch sử khiến tôi cảm nhận được nét đẹp văn hóa truyền thống Việt Nam.</p>
+                    <div class="testimonial-author mt-4">
+                        <strong style="color: #d4af37;">Nguyễn Văn A</strong>
+                        <p class="mb-0"><small>Du khách - TP.HCM</small></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="testimonial-header mb-3">
+                        <i class="fas fa-quote-left fa-2x mb-3" style="color: #d4af37;"></i>
+                        <h3>Di Sản Quý Giá</h3>
+                    </div>
+                    <p>Đình thần không chỉ là công trình kiến trúc mà còn là biểu tượng văn hóa tâm linh của cộng đồng. Nơi đây lưu giữ những giá trị truyền thống quý báu cần được bảo tồn.</p>
+                    <div class="testimonial-author mt-4">
+                        <strong style="color: #d4af37;">Trần Thị Buồi</strong>
+                        <p class="mb-0"><small>Người dân địa phương</small></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="testimonial-header mb-3">
+                        <i class="fas fa-quote-left fa-2x mb-3" style="color: #d4af37;"></i>
+                        <h3>Giáo Dục Ý Nghĩa</h3>
+                    </div>
+                    <p>Đưa học sinh đến đây là một hoạt động ngoại khóa vô cùng bổ ích. Các em được tiếp cận với lịch sử văn hóa dân tộc một cách sinh động và thực tế nhất.</p>
+                    <div class="testimonial-author mt-4">
+                        <strong style="color: #d4af37;">Lê Văn Cặc</strong>
+                        <p class="mb-0"><small>Giáo viên THPT</small></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="testimonial-header mb-3">
+                        <i class="fas fa-quote-left fa-2x mb-3" style="color: #d4af37;"></i>
+                        <h3>Nghiên Cứu Giá Trị</h3>
+                    </div>
+                    <p>Từ góc nhìn nghiên cứu, đây là mẫu vật quý giá về kiến trúc tín ngưỡng dân gian. Cần có những dự án bảo tồn và phát huy giá trị của di tích này.</p>
+                    <div class="testimonial-author mt-4">
+                        <strong style="color: #d4af37;">PGS.TS Phạm Văn Dái</strong>
+                        <p class="mb-0"><small>Viện Nghiên Cứu Văn Hóa</small></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="testimonial-header mb-3">
+                        <i class="fas fa-quote-left fa-2x mb-3" style="color: #d4af37;"></i>
+                        <h3>Tự Hào Văn Hóa</h3>
+                    </div>
+                    <p>Được lớn lên gần đình thần, tôi luôn tự hào về nơi này. Đây không chỉ là niềm tự hào của riêng tôi mà còn là của cả cộng đồng người dân nơi đây.</p>
+                    <div class="testimonial-author mt-4">
+                        <strong style="color: #d4af37;">Hoàng Thị E</strong>
+                        <p class="mb-0"><small>Thanh niên địa phương</small></p>
+                    </div>
+                </div>
+
+                <button id="prev" aria-label="previous slide"><i class="fas fa-chevron-left"></i></button>
+                <button id="next" aria-label="next slide"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Premium (BỎ CỘT KẾT NỐI) -->
+    <footer class="site-footer reveal">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo-wrapper mb-3">
+                    <i class="fas fa-landmark fa-3x" style="color: #d4af37;"></i>
+                </div>
+                <h5 class="mb-3" style="color: #d4af37;">The Time Capsule</h5>
+                <p>Lan tỏa giá trị di sản văn hóa Việt Nam đến thế hệ trẻ và cộng đồng. Cùng nhau bảo tồn và phát huy những giá trị truyền thống quý báu.</p>
+                <div class="footer-social mt-4">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Thông Tin</h4>
+                <a href="#about"><i class="fas fa-angle-right me-2"></i>Về Chúng Tôi</a>
+                <a href="#baiviet"><i class="fas fa-angle-right me-2"></i>Bài Viết</a>
+                <a href="#timhieu"><i class="fas fa-angle-right me-2"></i>Tìm Hiểu</a>
+                <a href="#"><i class="fas fa-angle-right me-2"></i>Liên Hệ</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Hỗ Trợ</h4>
+                <a href="#"><i class="fas fa-angle-right me-2"></i>Câu Hỏi Thường Gặp</a>
+                <a href="#"><i class="fas fa-angle-right me-2"></i>Điều Khoản Sử Dụng</a>
+                <a href="#"><i class="fas fa-angle-right me-2"></i>Chính Sách Bảo Mật</a>
+                <a href="#"><i class="fas fa-angle-right me-2"></i>Hướng Dẫn</a>
+            </div>
+
+            <!-- BỎ CỘT KẾT NỐI -->
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p>
+                <i class="far fa-copyright me-1"></i>2025
+                <span class="wave-text">The time capsule website</span>. All rights reserved
+            </p>
+            <a href="#hero" class="back-to-top" title="Về đầu trang">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+
+</html>
