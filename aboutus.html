@@ -649,32 +649,47 @@
                 letter-spacing: 2px;
             }
 
-            /* About sections */
+            /* About sections - ĐỒNG NHẤT CHO TẤT CẢ */
             .about-section {
                 padding: 70px 5%;
+                background-attachment: scroll !important;
             }
 
+            /* Override inline styles - QUAN TRỌNG */
             .about-container {
-                flex-direction: column;
+                flex-direction: column !important;
                 text-align: center;
                 gap: 40px;
             }
 
             .about-left {
                 max-width: 100%;
+                order: 1;
+            }
+
+            .about-right {
+                order: 2;
+                width: 100%;
+                max-width: 100%;
+                display: flex;
+                justify-content: center;
             }
 
             .about-left h2 {
                 font-size: 2.2rem;
+                text-align: center;
             }
 
             .about-left p {
                 font-size: 1.05rem;
+                text-align: center;
             }
 
-            /* Swiper carousel */
+            /* Swiper carousel - ĐỒNG NHẤT */
             .tranding-slider {
                 height: 400px;
+                width: 100%;
+                max-width: 600px;
             }
 
             .tranding-slide {
@@ -724,30 +739,50 @@
                 letter-spacing: 1.5px;
             }
 
-            /* About sections */
+            /* About sections - ĐỒNG NHẤT */
             .about-section {
                 padding: 60px 5%;
             }
 
+            /* Override inline styles - QUAN TRỌNG */
             .about-container {
+                flex-direction: column !important;
                 gap: 35px;
+                text-align: center;
+            }
+
+            .about-left {
+                max-width: 100%;
+                order: 1;
+            }
+
+            .about-right {
+                order: 2;
+                width: 100%;
+                max-width: 100%;
+                display: flex;
+                justify-content: center;
             }
 
             .about-left h2 {
                 font-size: 2rem;
                 margin-bottom: 20px;
+                text-align: center;
             }
 
             .about-left p {
                 font-size: 1rem;
                 line-height: 1.7;
                 margin-bottom: 18px;
+                text-align: center;
             }
 
-            /* Swiper carousel mobile */
+            /* Swiper carousel mobile - ĐỒNG NHẤT */
             .tranding-slider {
                 height: 350px;
                 padding: 30px 0;
+                width: 100%;
+                max-width: 500px;
             }
 
             .tranding-slide {
@@ -821,30 +856,51 @@
                 letter-spacing: 1px;
             }
 
-            /* About sections compact */
+            /* About sections compact - ĐỒNG NHẤT */
             .about-section {
                 padding: 50px 3%;
             }
 
+            /* Override inline styles - QUAN TRỌNG */
             .about-container {
+                flex-direction: column !important;
                 gap: 30px;
+                text-align: center;
+            }
+
+            .about-left {
+                max-width: 100%;
+                order: 1;
+            }
+
+            .about-right {
+                order: 2;
+                width: 100%;
+                max-width: 100%;
+                display: flex;
+                justify-content: center;
             }
 
             .about-left h2 {
                 font-size: 1.75rem;
                 margin-bottom: 18px;
+                text-align: center;
             }
 
             .about-left p {
                 font-size: 0.95rem;
                 line-height: 1.6;
                 margin-bottom: 16px;
+                text-align: center;
             }
 
-            /* Swiper carousel compact */
+            /* Swiper carousel compact - ĐỒNG NHẤT */
             .tranding-slider {
                 height: 320px;
                 padding: 25px 0;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
             }
 
             .tranding-slide {
@@ -941,8 +997,75 @@
                 padding: 50px 5%;
             }
 
+            .about-container {
+                flex-direction: column !important;
+            }
+
             .tranding-slider {
                 height: 300px;
+            }
+        }
+
+        /* =====================================
+           ĐỒNG NHẤT TẤT CẢ SECTIONS - MOBILE
+           ===================================== */
+
+        @media (max-width: 992px) {
+            /* Đảm bảo tất cả sections có min-height đồng nhất */
+            #gioithieu,
+            #mucdich,
+            #loinhangui {
+                min-height: auto;
+            }
+
+            /* Text color contrast cho tất cả sections */
+            .about-section .about-left h2,
+            .about-section .about-left p {
+                color: inherit;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            /* Container width consistency */
+            .about-section .container {
+                max-width: 100%;
+                padding: 0 15px;
+            }
+
+            /* Swiper wrapper consistency */
+            .about-section .about-right {
+                padding: 0;
+            }
+
+            /* Đảm bảo carousel không bị overflow */
+            .tranding-slider {
+                overflow: hidden;
+            }
+
+            /* Button positioning cho tất cả carousel */
+            .tranding-slider .swiper-button-prev {
+                left: 5px;
+            }
+
+            .tranding-slider .swiper-button-next {
+                right: 5px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            /* Compact spacing cho tất cả sections */
+            #gioithieu .about-left,
+            #mucdich .about-left,
+            #loinhangui .about-left {
+                padding: 0 10px;
+            }
+
+            /* Button positioning compact */
+            .tranding-slider .swiper-button-prev {
+                left: 2px;
+            }
+
+            .tranding-slider .swiper-button-next {
+                right: 2px;
             }
         }
         /* Smooth transitions for all elements */
